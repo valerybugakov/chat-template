@@ -13,7 +13,7 @@ const defaultStyle = {
   },
 };
 
-const Message = ({ height, message, styles }) => {
+const Message = ({ height, message, styles, imageRenderer }) => {
   const style = StyleSheet.create(assignDeep({}, defaultStyle, styles));
 
   const avatarStyles = {
@@ -25,13 +25,14 @@ const Message = ({ height, message, styles }) => {
   return (
     <div className={css(style.container)}>
       {message.avatar && <Avatar src={message.avatar} styles={avatarStyles} />}
-      <MessageContent height={height} message={message} />
+      <MessageContent height={height} message={message} imageRenderer={imageRenderer} />
     </div>
   );
 };
 
 Message.propTypes = {
   height: PropTypes.number,
+  imageRenderer: PropTypes.func,
   message: PropTypes.shape({
     message: PropTypes.string,
     src: PropTypes.string,

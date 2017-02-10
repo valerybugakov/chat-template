@@ -29,7 +29,7 @@ const defaultStyle = {
   },
 };
 
-const MessageContent = ({ height, message, styles }) => {
+const MessageContent = ({ height, message, styles, imageRenderer: Image }) => {
   const style = StyleSheet.create(assignDeep({}, defaultStyle, {
     contentBase: {
       color: message.textColor || defaultStyle.contentBase.color,
@@ -45,13 +45,18 @@ const MessageContent = ({ height, message, styles }) => {
   return (
     <div className={css(style.contentBase, !message.inbound && style.contentRight)} >
       <span >{message.message}</span>
-      {imageContainer(message.src, height)}
+      {
+        Image
+          ? <Image src={message.src} />
+          : imageContainer(message.src, height)
+      }
     </div>
   );
 };
 
 MessageContent.propTypes = {
   height: PropTypes.number,
+  imageRenderer: PropTypes.func,
   message: PropTypes.shape({
     message: PropTypes.string,
     src: PropTypes.string,
