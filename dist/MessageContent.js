@@ -17,18 +17,7 @@ var _objectAssignDeep2 = _interopRequireDefault(_objectAssignDeep);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var defaultStyle = {
-  contentBase: {
-    backgroundColor: 'white',
-    maxWidth: '60%',
-    wordWrap: 'break-word',
-    color: '#262626',
-    borderRadius: '10px',
-    padding: '2%',
-    borderColor: 'grey',
-    boxShadow: '1px 5px 10px rgba(0,0,0,.13)',
-    marginBottom: '2%',
-    order: '2'
-  },
+  contentBase: {},
   contentRight: {
     marginLeft: 'auto'
   },
