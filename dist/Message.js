@@ -35,6 +35,8 @@ var defaultStyle = {
 
 var Message = function Message(_ref) {
   var height = _ref.height,
+      _ref$className = _ref.className,
+      className = _ref$className === undefined ? '' : _ref$className,
       message = _ref.message,
       styles = _ref.styles,
       imageRenderer = _ref.imageRenderer;
@@ -49,14 +51,16 @@ var Message = function Message(_ref) {
 
   return _react2.default.createElement(
     'div',
-    { className: (0, _aphrodite.css)(style.container) },
+    { className: className + ' ' + (0, _aphrodite.css)(style.container) },
     message.avatar && _react2.default.createElement(_Avatar2.default, { src: message.avatar, styles: avatarStyles }),
     _react2.default.createElement(_MessageContent2.default, { height: height, message: message, imageRenderer: imageRenderer })
   );
 };
 
 Message.propTypes = {
+  className: _react.PropTypes.string,
   height: _react.PropTypes.number,
+  imageRenderer: _react.PropTypes.func,
   message: _react.PropTypes.shape({
     message: _react.PropTypes.string,
     src: _react.PropTypes.string,

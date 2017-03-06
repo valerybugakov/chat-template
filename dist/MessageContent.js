@@ -79,6 +79,7 @@ var MessageContent = function MessageContent(_ref) {
 
 MessageContent.propTypes = {
   height: _react.PropTypes.number,
+  imageRenderer: _react.PropTypes.func,
   message: _react.PropTypes.shape({
     message: _react.PropTypes.string,
     src: _react.PropTypes.string,
