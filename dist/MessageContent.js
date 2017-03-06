@@ -58,11 +58,15 @@ var MessageContent = function MessageContent(_ref) {
     'div',
     { className: (0, _aphrodite.css)(style.contentBase, !message.inbound && style.contentRight) },
     _react2.default.createElement(
-      'span',
+      'div',
       null,
-      message.message
-    ),
-    Image ? _react2.default.createElement(Image, { src: message.src }) : imageContainer(message.src, height)
+      _react2.default.createElement(
+        'span',
+        null,
+        message.message
+      ),
+      Image ? _react2.default.createElement(Image, { src: message.src }) : imageContainer(message.src, height)
+    )
   );
 };
 

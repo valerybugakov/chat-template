@@ -34,12 +34,14 @@ const MessageContent = ({ height, message, styles, imageRenderer: Image }) => {
 
   return (
     <div className={css(style.contentBase, !message.inbound && style.contentRight)} >
-      <span >{message.message}</span>
-      {
-        Image
-          ? <Image src={message.src} />
-          : imageContainer(message.src, height)
-      }
+      <div>
+        <span >{message.message}</span>
+        {
+          Image
+            ? <Image src={message.src} />
+            : imageContainer(message.src, height)
+        }
+      </div>
     </div>
   );
 };
