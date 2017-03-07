@@ -21,7 +21,7 @@ const Avatar = ({ styles, src }) => {
 
   return (
     <MuiThemeProvider muiTheme={muiTheme}>
-      <div className={css(override.container)}>
+      <div className={`chat-avatar ${css(override.container)}`}>
         <AvatarUI src={src} />
       </div>
     </MuiThemeProvider>

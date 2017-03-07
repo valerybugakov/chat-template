@@ -27,15 +27,17 @@ const MessageContent = ({ height, message, styles, imageRenderer: Image }) => {
     },
   }, styles || {}));
 
-  const imageContainer = (src) => {
+  const imageContainer = src => {
     const heightNeeded = (height || 0) / 3;
     return src && <div className={css(style.imageContainer)}><img src={src} role="presentation" height={`${heightNeeded}px`} className={css(style.image)} /></div>;
   };
 
+  const className = css(style.contentBase, !message.inbound && style.contentRight);
+
   return (
-    <div className={css(style.contentBase, !message.inbound && style.contentRight)} >
-      <div>
-        <span >{message.message}</span>
+    <div className={`chat-content ${className}`} >
+      <div className="chat-bubble">
+        <span>{message.message}</span>
         {
           Image
             ? <Image src={message.src} />

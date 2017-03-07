@@ -54,12 +54,14 @@ var MessageContent = function MessageContent(_ref) {
     );
   };
 
+  var className = (0, _aphrodite.css)(style.contentBase, !message.inbound && style.contentRight);
+
   return _react2.default.createElement(
     'div',
-    { className: (0, _aphrodite.css)(style.contentBase, !message.inbound && style.contentRight) },
+    { className: 'chat-content ' + className },
     _react2.default.createElement(
       'div',
-      null,
+      { className: 'chat-bubble' },
       _react2.default.createElement(
         'span',
         null,

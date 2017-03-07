@@ -49,7 +49,7 @@ var Avatar = function Avatar(_ref) {
     { muiTheme: muiTheme },
     _react2.default.createElement(
       'div',
-      { className: (0, _aphrodite.css)(override.container) },
+      { className: 'chat-avatar ' + (0, _aphrodite.css)(override.container) },
       _react2.default.createElement(_Avatar2.default, { src: src })
     )
   );
