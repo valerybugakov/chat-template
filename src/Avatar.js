@@ -22,14 +22,14 @@ const Avatar = ({ styles, src }) => {
   return (
     <MuiThemeProvider muiTheme={muiTheme}>
       <div className={`chat-avatar ${css(override.container)}`}>
-        <AvatarUI src={src} />
+        {src && <AvatarUI src={src} />}
       </div>
     </MuiThemeProvider>
   );
 };
 
 Avatar.propTypes = {
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
   styles: PropTypes.object,
 };
 

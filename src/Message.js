@@ -24,7 +24,7 @@ const Message = ({ height, className = '', message, styles, imageRenderer }) => 
 
   return (
     <div className={`${className} ${css(style.container)}`}>
-      {message.avatar && <Avatar src={message.avatar} styles={avatarStyles} />}
+      <Avatar src={message.avatar} styles={avatarStyles} />
       <MessageContent height={height} message={message} imageRenderer={imageRenderer} />
     </div>
   );

@@ -52,7 +52,7 @@ var Message = function Message(_ref) {
   return _react2.default.createElement(
     'div',
     { className: className + ' ' + (0, _aphrodite.css)(style.container) },
-    message.avatar && _react2.default.createElement(_Avatar2.default, { src: message.avatar, styles: avatarStyles }),
+    _react2.default.createElement(_Avatar2.default, { src: message.avatar, styles: avatarStyles }),
     _react2.default.createElement(_MessageContent2.default, { height: height, message: message, imageRenderer: imageRenderer })
   );
 };

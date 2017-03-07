@@ -50,13 +50,13 @@ var Avatar = function Avatar(_ref) {
     _react2.default.createElement(
       'div',
       { className: 'chat-avatar ' + (0, _aphrodite.css)(override.container) },
-      _react2.default.createElement(_Avatar2.default, { src: src })
+      src && _react2.default.createElement(_Avatar2.default, { src: src })
     )
   );
 };
 
 Avatar.propTypes = {
-  src: _react.PropTypes.string.isRequired,
+  src: _react.PropTypes.string,
   styles: _react.PropTypes.object
 };
 
